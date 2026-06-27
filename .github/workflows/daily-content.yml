@@ -1,0 +1,76 @@
+name: Daily Content
+
+# Generates a fresh daily brief + featured posts from real trending sources,
+# rebuilds the static site, and deploys it to GitHub Pages.
+# The growing archive is persisted on a dedicated, bot-owned `content` branch
+# so the working branches stay code-only.
+
+on:
+  schedule:
+    - cron: '0 13 * * *' # 13:00 UTC daily
+  workflow_dispatch: {} # allow manual runs from the Actions tab
+
+permissions:
+  contents: write # push the content branch
+  pages: write # deploy Pages
+  id-token: write # Pages deployment auth
+
+concurrency:
+  group: daily-content
+  cancel-in-progress: false
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore archive from content branch
+        run: |
+          mkdir -p data
+          git fetch origin content 2>/dev/null || true
+          if git cat-file -e origin/content:posts.json 2>/dev/null; then
+            git show origin/content:posts.json > data/posts.json
+            echo "Restored archive ($(node -e 'console.log(JSON.parse(require("fs").readFileSync("data/posts.json")).posts.length)') posts)."
+          else
+            echo "No content branch yet — starting a fresh archive."
+          fi
+
+      - name: Generate today's content
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MODEL: ${{ vars.MODEL }}
+        run: node generate.js
+
+      - name: Build static site
+        run: node build.js
+
+      - name: Persist archive to content branch
+        run: |
+          git config user.name "viralengine-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp data/posts.json "$tmp/posts.json"
+          cd "$tmp"
+          git init -q
+          git checkout -q -b content
+          git add posts.json
+          git commit -qm "content: $(date -u +%F)"
+          git push -fq "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" content
+          echo "Archive saved to content branch."
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

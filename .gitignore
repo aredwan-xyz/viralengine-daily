@@ -1,0 +1,19 @@
+# generated output (built in CI, archive persisted on the content branch)
+dist/
+data/
+
+# deps (none required)
+node_modules/
+
+# secrets
+.env
+.env.local
+
+# logs
+*.log
+
+# os / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp

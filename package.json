@@ -1,0 +1,23 @@
+{
+  "name": "viralengine-daily",
+  "version": "1.0.0",
+  "description": "Self-updating daily content engine — pulls real trending items from free sources, has AI write grounded high-signal posts, and publishes to GitHub Pages.",
+  "scripts": {
+    "generate": "node generate.js",
+    "build": "node build.js",
+    "daily": "node generate.js && node build.js",
+    "serve": "cd dist && python3 -m http.server 8000"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "content",
+    "automation",
+    "ai",
+    "static-site",
+    "github-pages",
+    "trending"
+  ],
+  "license": "MIT"
+}
