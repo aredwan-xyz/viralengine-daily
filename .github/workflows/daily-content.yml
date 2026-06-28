@@ -52,20 +52,6 @@ jobs:
       - name: Build static site
         run: node build.js
 
-      - name: Persist archive to content branch
-        run: |
-          git config user.name "viralengine-bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          tmp="$(mktemp -d)"
-          cp data/posts.json "$tmp/posts.json"
-          cd "$tmp"
-          git init -q
-          git checkout -q -b content
-          git add posts.json
-          git commit -qm "content: $(date -u +%F)"
-          git push -fq "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" content
-          echo "Archive saved to content branch."
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -74,3 +60,20 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+
+      # Best-effort: persist the growing archive on a dedicated content branch.
+      # Runs after the deploy so the site always publishes even if this hiccups.
+      - name: Persist archive to content branch
+        continue-on-error: true
+        run: |
+          tmp="$(mktemp -d)"
+          cp data/posts.json "$tmp/posts.json"
+          cd "$tmp"
+          git init -q
+          git config user.name "viralengine-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -q -b content
+          git add posts.json
+          git commit -qm "content: $(date -u +%F)"
+          git push -fq "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" content
+          echo "Archive saved to content branch."
