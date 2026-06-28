@@ -37,7 +37,7 @@ const today = () => new Date().toISOString().slice(0, 10);
 const nowISO = () => new Date().toISOString();
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
 
-function finalizePost(j, item, cat) {
+function finalizePost(j, item, cat, ai) {
   const title = String(j.title || item.title).slice(0, 120);
   return {
     slug: slugify(title) + '-' + today().replace(/-/g, ''),
@@ -51,6 +51,7 @@ function finalizePost(j, item, cat) {
     source: { name: item.source, url: item.url },
     impact: Math.max(1, Math.min(100, Math.round(j.impact || 60))),
     date: today(),
+    ai: !!ai,
     ts: nowISO(),
   };
 }
@@ -73,7 +74,7 @@ async function writePost(item, cat) {
       `"takeaways":["<3-4 crisp takeaways>"],"tags":["<2-4 lowercase tags>"],` +
       `"impact":<integer 1-100 importance>}`;
     try {
-      return finalizePost(await gemini.chatJSON(system, user, { maxTokens: 1600 }), item, cat);
+      return finalizePost(await gemini.chatJSON(system, user, { maxTokens: 1600 }), item, cat, true);
     } catch (e) {
       console.error(`  ai post failed (${cat.key}): ${e.message} — using fallback`);
     }
@@ -91,7 +92,8 @@ async function writePost(item, cat) {
       impact: Math.min(95, 55 + Math.round((item.score || 0) / 25)),
     },
     item,
-    cat
+    cat,
+    false
   );
 }
 
@@ -170,14 +172,28 @@ async function main() {
   }
 
   const archive = loadArchive();
-  const seen = new Set(archive.posts.map((p) => p.slug));
-  const fresh = featured.filter((p) => !seen.has(p.slug));
-  archive.posts = [...fresh, ...archive.posts].slice(0, MAX_POSTS);
+  const oldBySlug = new Map(archive.posts.map((p) => [p.slug, p]));
+  // Merge today's posts: a same-slug post replaces the old one, but never
+  // downgrade a rich AI post back to a fallback (e.g. a later same-day re-run
+  // that hit a quota). Then keep the rest of the archive untouched.
+  const result = [];
+  const used = new Set();
+  for (const p of featured) {
+    const old = oldBySlug.get(p.slug);
+    const chosen = old && old.ai && !p.ai ? old : p;
+    if (!used.has(chosen.slug)) { result.push(chosen); used.add(chosen.slug); }
+  }
+  for (const p of archive.posts) {
+    if (!used.has(p.slug)) { result.push(p); used.add(p.slug); }
+  }
+  const added = result.filter((p) => !oldBySlug.has(p.slug)).length;
+  const upgraded = featured.filter((p) => { const o = oldBySlug.get(p.slug); return o && !o.ai && p.ai; }).length;
+  archive.posts = result.slice(0, MAX_POSTS);
   archive.briefs = [brief, ...archive.briefs.filter((b) => b.date !== brief.date)].slice(0, MAX_BRIEFS);
   archive.updated = nowISO();
 
   fs.writeFileSync(ARCHIVE, JSON.stringify(archive, null, 2));
-  console.log(`\n✓ +${fresh.length} posts · brief ${brief.date} · archive now ${archive.posts.length} posts\n`);
+  console.log(`\n✓ +${added} new · ${upgraded} upgraded · brief ${brief.date} · archive now ${archive.posts.length} posts\n`);
 }
 
 main().catch((e) => {
