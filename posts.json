@@ -1,0 +1,739 @@
+{
+  "posts": [
+    {
+      "slug": "show-hn-this-up-votes-itself-20260701",
+      "title": "Show HN: This up votes itself",
+      "dek": "Trending in Startups — surfaced from Hacker News.",
+      "body": "This is a trending startups item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Startups",
+        "Source: Hacker News",
+        "82 comments / 3531 points"
+      ],
+      "tags": [
+        "startups",
+        "trending"
+      ],
+      "category": "startups",
+      "categoryLabel": "Startups",
+      "source": {
+        "name": "Hacker News",
+        "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74"
+      },
+      "impact": 95,
+      "date": "2026-07-01",
+      "ai": false,
+      "ts": "2026-07-01T15:46:24.635Z"
+    },
+    {
+      "slug": "claude-code-is-steganographically-marking-requests-20260701",
+      "title": "Claude Code is steganographically marking requests",
+      "dek": "Trending in Tech — surfaced from Hacker News.",
+      "body": "This is a trending tech item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Tech",
+        "Source: Hacker News",
+        "688 comments / 2303 points"
+      ],
+      "tags": [
+        "tech",
+        "trending"
+      ],
+      "category": "tech",
+      "categoryLabel": "Tech",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://thereallo.dev/blog/claude-code-prompt-steganography"
+      },
+      "impact": 95,
+      "date": "2026-07-01",
+      "ai": false,
+      "ts": "2026-07-01T15:46:24.745Z"
+    },
+    {
+      "slug": "claude-sonnet-5-20260701",
+      "title": "Claude Sonnet 5",
+      "dek": "Trending in Industry — surfaced from Hacker News.",
+      "body": "This is a trending industry item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Industry",
+        "Source: Hacker News",
+        "745 comments / 1212 points"
+      ],
+      "tags": [
+        "industry",
+        "trending"
+      ],
+      "category": "industry",
+      "categoryLabel": "Industry",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      "impact": 95,
+      "date": "2026-07-01",
+      "ai": false,
+      "ts": "2026-07-01T15:46:24.824Z"
+    },
+    {
+      "slug": "dspark-speculative-decoding-accelerates-llm-inference-pdf-20260701",
+      "title": "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+      "dek": "Trending in AI — surfaced from Hacker News.",
+      "body": "This is a trending ai item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in AI",
+        "Source: Hacker News",
+        "361 comments / 793 points"
+      ],
+      "tags": [
+        "ai",
+        "trending"
+      ],
+      "category": "ai",
+      "categoryLabel": "AI",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf"
+      },
+      "impact": 87,
+      "date": "2026-07-01",
+      "ai": false,
+      "ts": "2026-07-01T15:46:24.917Z"
+    },
+    {
+      "slug": "show-hn-this-up-votes-itself-20260630",
+      "title": "Show HN: This up votes itself",
+      "dek": "Trending in Startups — surfaced from Hacker News.",
+      "body": "This is a trending startups item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Startups",
+        "Source: Hacker News",
+        "82 comments / 3531 points"
+      ],
+      "tags": [
+        "startups",
+        "trending"
+      ],
+      "category": "startups",
+      "categoryLabel": "Startups",
+      "source": {
+        "name": "Hacker News",
+        "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74"
+      },
+      "impact": 95,
+      "date": "2026-06-30",
+      "ai": false,
+      "ts": "2026-06-30T15:33:40.452Z"
+    },
+    {
+      "slug": "qwen-3-6-27b-is-the-sweet-spot-for-local-development-20260630",
+      "title": "Qwen 3.6 27B is the sweet spot for local development",
+      "dek": "Trending in Tech — surfaced from Hacker News.",
+      "body": "This is a trending tech item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Tech",
+        "Source: Hacker News",
+        "676 comments / 1050 points"
+      ],
+      "tags": [
+        "tech",
+        "trending"
+      ],
+      "category": "tech",
+      "categoryLabel": "Tech",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://quesma.com/blog/qwen-36-is-awesome/"
+      },
+      "impact": 95,
+      "date": "2026-06-30",
+      "ai": false,
+      "ts": "2026-06-30T15:33:40.573Z"
+    },
+    {
+      "slug": "dspark-speculative-decoding-accelerates-llm-inference-pdf-20260630",
+      "title": "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+      "dek": "Trending in AI — surfaced from Hacker News.",
+      "body": "This is a trending ai item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in AI",
+        "Source: Hacker News",
+        "360 comments / 792 points"
+      ],
+      "tags": [
+        "ai",
+        "trending"
+      ],
+      "category": "ai",
+      "categoryLabel": "AI",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf"
+      },
+      "impact": 87,
+      "date": "2026-06-30",
+      "ai": false,
+      "ts": "2026-06-30T15:33:40.663Z"
+    },
+    {
+      "slug": "self-a-new-top-level-domain-designed-to-support-self-hosting-20260630",
+      "title": ".self: A new top-level domain designed to support self-hosting",
+      "dek": "Trending in Industry — surfaced from Hacker News.",
+      "body": "This is a trending industry item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Industry",
+        "Source: Hacker News",
+        "341 comments / 595 points"
+      ],
+      "tags": [
+        "industry",
+        "trending"
+      ],
+      "category": "industry",
+      "categoryLabel": "Industry",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://hccf.onmy.cloud/2026/06/21/reclaiming-our-digital-selves-hccfs-vision-for-a-human-centered-top-level-domain/"
+      },
+      "impact": 79,
+      "date": "2026-06-30",
+      "ai": false,
+      "ts": "2026-06-30T15:33:40.752Z"
+    },
+    {
+      "slug": "show-hn-this-up-votes-itself-20260629",
+      "title": "Show HN: This up votes itself",
+      "dek": "Trending in Startups — surfaced from Hacker News.",
+      "body": "This is a trending startups item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Startups",
+        "Source: Hacker News",
+        "82 comments / 3531 points"
+      ],
+      "tags": [
+        "startups",
+        "trending"
+      ],
+      "category": "startups",
+      "categoryLabel": "Startups",
+      "source": {
+        "name": "Hacker News",
+        "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74"
+      },
+      "impact": 95,
+      "date": "2026-06-29",
+      "ai": false,
+      "ts": "2026-06-29T16:39:54.949Z"
+    },
+    {
+      "slug": "age-verification-is-just-a-precursor-to-automated-attribution-of-speec-20260629",
+      "title": "Age verification is just a precursor to automated attribution of speech",
+      "dek": "Trending in Tech — surfaced from Hacker News.",
+      "body": "This is a trending tech item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Tech",
+        "Source: Hacker News",
+        "504 comments / 842 points"
+      ],
+      "tags": [
+        "tech",
+        "trending"
+      ],
+      "category": "tech",
+      "categoryLabel": "Tech",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://nonogra.ph/age-verification-is-just-a-precursor-to-attribution-of-speech-06-29-2026"
+      },
+      "impact": 89,
+      "date": "2026-06-29",
+      "ai": false,
+      "ts": "2026-06-29T16:39:55.072Z"
+    },
+    {
+      "slug": "hackerrank-open-sourced-its-ats-my-resume-scored-90-100-oh-wait-74-no--20260629",
+      "title": "HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88",
+      "dek": "Trending in Industry — surfaced from Hacker News.",
+      "body": "This is a trending industry item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Industry",
+        "Source: Hacker News",
+        "346 comments / 814 points"
+      ],
+      "tags": [
+        "industry",
+        "trending"
+      ],
+      "category": "industry",
+      "categoryLabel": "Industry",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://danunparsed.com/p/hackerrank-open-source-ats"
+      },
+      "impact": 88,
+      "date": "2026-06-29",
+      "ai": false,
+      "ts": "2026-06-29T16:39:55.173Z"
+    },
+    {
+      "slug": "anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilitie-20260629",
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "dek": "Trending in AI — surfaced from Hacker News.",
+      "body": "This is a trending ai item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in AI",
+        "Source: Hacker News",
+        "1310 comments / 809 points"
+      ],
+      "tags": [
+        "ai",
+        "trending"
+      ],
+      "category": "ai",
+      "categoryLabel": "AI",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/"
+      },
+      "impact": 87,
+      "date": "2026-06-29",
+      "ai": false,
+      "ts": "2026-06-29T16:39:55.311Z"
+    },
+    {
+      "slug": "show-hn-this-up-votes-itself-20260628",
+      "title": "Show HN: This up votes itself",
+      "dek": "Trending in Startups — surfaced from Hacker News.",
+      "body": "This is a trending startups item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Startups",
+        "Source: Hacker News",
+        "82 comments / 3531 points"
+      ],
+      "tags": [
+        "startups",
+        "trending"
+      ],
+      "category": "startups",
+      "categoryLabel": "Startups",
+      "source": {
+        "name": "Hacker News",
+        "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74"
+      },
+      "impact": 95,
+      "date": "2026-06-28",
+      "ai": false,
+      "ts": "2026-06-28T14:50:37.533Z"
+    },
+    {
+      "slug": "anonymous-github-account-mass-dropping-undisclosed-0-days-20260628",
+      "title": "Anonymous GitHub account mass-dropping undisclosed 0-days",
+      "dek": "Trending in Tech — surfaced from Hacker News.",
+      "body": "This is a trending tech item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Tech",
+        "Source: Hacker News",
+        "345 comments / 886 points"
+      ],
+      "tags": [
+        "tech",
+        "trending"
+      ],
+      "category": "tech",
+      "categoryLabel": "Tech",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://github.com/bikini/exploitarium"
+      },
+      "impact": 90,
+      "date": "2026-06-28",
+      "ai": false,
+      "ts": "2026-06-28T14:50:37.635Z"
+    },
+    {
+      "slug": "anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilitie-20260628",
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "dek": "Trending in AI — surfaced from Hacker News.",
+      "body": "This is a trending ai item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in AI",
+        "Source: Hacker News",
+        "1303 comments / 807 points"
+      ],
+      "tags": [
+        "ai",
+        "trending"
+      ],
+      "category": "ai",
+      "categoryLabel": "AI",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/"
+      },
+      "impact": 87,
+      "date": "2026-06-28",
+      "ai": false,
+      "ts": "2026-06-28T14:50:37.801Z"
+    },
+    {
+      "slug": "founding-a-company-in-germany-9600-152-days-and-i-still-can-t-send-an--20260628",
+      "title": "Founding a company in Germany: €9600, 152 days and I still can't send an invoice",
+      "dek": "Trending in Business — surfaced from Hacker News.",
+      "body": "This is a trending business item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Business",
+        "Source: Hacker News",
+        "751 comments / 604 points"
+      ],
+      "tags": [
+        "business",
+        "trending"
+      ],
+      "category": "business",
+      "categoryLabel": "Business",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://paolino.me/founding-a-company-in-germany/"
+      },
+      "impact": 79,
+      "date": "2026-06-28",
+      "ai": false,
+      "ts": "2026-06-28T14:50:37.903Z"
+    },
+    {
+      "slug": "openai-unveils-its-first-custom-chip-built-by-broadcom-20260628",
+      "title": "OpenAI unveils its first custom chip, built by Broadcom",
+      "dek": "Trending in Tech — surfaced from Hacker News.",
+      "body": "Announcement: https:&#x2F;&#x2F;openai.com&#x2F;index&#x2F;openai-broadcom-jalapeno-inference-... https:&#x2F;&#x2F;decrypt.co&#x2F;371971&#x2F;openai-broadcom-jalapeno-first-cus... https:&#x2F;&#x2F;www.cnn.com&#x2F;2026&#x2F;06&#x2F;24&#x2F;tech&#x2F;openai-broadcom-jalapeno...\n\nThis is a trending tech item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Tech",
+        "Source: Hacker News",
+        "467 comments / 820 points"
+      ],
+      "tags": [
+        "tech",
+        "trending"
+      ],
+      "category": "tech",
+      "categoryLabel": "Tech",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/"
+      },
+      "impact": 88,
+      "date": "2026-06-28",
+      "ts": "2026-06-28T00:08:53.963Z"
+    },
+    {
+      "slug": "dspark-speculative-decoding-accelerates-llm-inference-pdf-20260628",
+      "title": "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+      "dek": "Trending in Industry — surfaced from Hacker News.",
+      "body": "This is a trending industry item picked up from Hacker News. Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*",
+      "takeaways": [
+        "Trending now in Industry",
+        "Source: Hacker News",
+        "293 comments / 714 points"
+      ],
+      "tags": [
+        "industry",
+        "trending"
+      ],
+      "category": "industry",
+      "categoryLabel": "Industry",
+      "source": {
+        "name": "Hacker News",
+        "url": "https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf"
+      },
+      "impact": 84,
+      "date": "2026-06-28",
+      "ts": "2026-06-28T00:08:53.963Z"
+    }
+  ],
+  "briefs": [
+    {
+      "date": "2026-07-01",
+      "ts": "2026-07-01T15:46:24.518Z",
+      "intro": "Your daily signal across tech, science, AI, business, startups, and the wider world.",
+      "items": [
+        {
+          "key": "tech",
+          "category": "Tech",
+          "title": "Claude Code is steganographically marking requests",
+          "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+          "source": "Hacker News",
+          "line": "Trending in Tech."
+        },
+        {
+          "key": "science",
+          "category": "Science",
+          "title": "Claude Science",
+          "url": "https://claude.com/product/claude-science",
+          "source": "Hacker News",
+          "line": "Trending in Science."
+        },
+        {
+          "key": "ai",
+          "category": "AI",
+          "title": "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+          "url": "https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf",
+          "source": "Hacker News",
+          "line": "Trending in AI."
+        },
+        {
+          "key": "business",
+          "category": "Business",
+          "title": "Show HN: Appaca – AI Workspace for Operators",
+          "url": "https://www.appaca.ai/",
+          "source": "Hacker News",
+          "line": "Trending in Business."
+        },
+        {
+          "key": "startups",
+          "category": "Startups",
+          "title": "Show HN: This up votes itself",
+          "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74",
+          "source": "Hacker News",
+          "line": "Trending in Startups."
+        },
+        {
+          "key": "industry",
+          "category": "Industry",
+          "title": "Claude Code is steganographically marking requests",
+          "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+          "source": "Hacker News",
+          "line": "Trending in Industry."
+        },
+        {
+          "key": "humanity",
+          "category": "Humanity",
+          "title": "Professor denounces mass AI fraud on an exam at Brown",
+          "url": "https://english.elpais.com/education/2026-06-28/ai-fraud-at-brown-university-academic-integrity-is-at-risk.html",
+          "source": "Hacker News",
+          "line": "Trending in Humanity."
+        },
+        {
+          "key": "viral",
+          "category": "Viral",
+          "title": "Claude Code is steganographically marking requests",
+          "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+          "source": "Hacker News",
+          "line": "Trending in Viral."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "ts": "2026-06-30T15:33:40.351Z",
+      "intro": "Your daily signal across tech, science, AI, business, startups, and the wider world.",
+      "items": [
+        {
+          "key": "tech",
+          "category": "Tech",
+          "title": "Qwen 3.6 27B is the sweet spot for local development",
+          "url": "https://quesma.com/blog/qwen-36-is-awesome/",
+          "source": "Hacker News",
+          "line": "Trending in Tech."
+        },
+        {
+          "key": "science",
+          "category": "Science",
+          "title": "Why does kinetic energy increase quadratically, not linearly, with speed? (2011)",
+          "url": "https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed",
+          "source": "Hacker News",
+          "line": "Trending in Science."
+        },
+        {
+          "key": "ai",
+          "category": "AI",
+          "title": "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+          "url": "https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf",
+          "source": "Hacker News",
+          "line": "Trending in AI."
+        },
+        {
+          "key": "business",
+          "category": "Business",
+          "title": "What I'm Finding About LLM Code Style and Token Costs",
+          "url": "https://www.jimmont.com/llm-style-token-costs",
+          "source": "Hacker News",
+          "line": "Trending in Business."
+        },
+        {
+          "key": "startups",
+          "category": "Startups",
+          "title": "Show HN: This up votes itself",
+          "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74",
+          "source": "Hacker News",
+          "line": "Trending in Startups."
+        },
+        {
+          "key": "industry",
+          "category": "Industry",
+          "title": "Qwen 3.6 27B is the sweet spot for local development",
+          "url": "https://quesma.com/blog/qwen-36-is-awesome/",
+          "source": "Hacker News",
+          "line": "Trending in Industry."
+        },
+        {
+          "key": "humanity",
+          "category": "Humanity",
+          "title": "Professor denounces mass AI fraud on an exam at Brown",
+          "url": "https://english.elpais.com/education/2026-06-28/ai-fraud-at-brown-university-academic-integrity-is-at-risk.html",
+          "source": "Hacker News",
+          "line": "Trending in Humanity."
+        },
+        {
+          "key": "viral",
+          "category": "Viral",
+          "title": "Qwen 3.6 27B is the sweet spot for local development",
+          "url": "https://quesma.com/blog/qwen-36-is-awesome/",
+          "source": "Hacker News",
+          "line": "Trending in Viral."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "ts": "2026-06-29T16:39:54.825Z",
+      "intro": "Your daily signal across tech, science, AI, business, startups, and the wider world.",
+      "items": [
+        {
+          "key": "tech",
+          "category": "Tech",
+          "title": "Age verification is just a precursor to automated attribution of speech",
+          "url": "https://nonogra.ph/age-verification-is-just-a-precursor-to-attribution-of-speech-06-29-2026",
+          "source": "Hacker News",
+          "line": "Trending in Tech."
+        },
+        {
+          "key": "science",
+          "category": "Science",
+          "title": "Why does kinetic energy increase quadratically, not linearly, with speed? (2011)",
+          "url": "https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed",
+          "source": "Hacker News",
+          "line": "Trending in Science."
+        },
+        {
+          "key": "ai",
+          "category": "AI",
+          "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+          "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+          "source": "Hacker News",
+          "line": "Trending in AI."
+        },
+        {
+          "key": "business",
+          "category": "Business",
+          "title": "Founding a company in Germany: €9600, 152 days and I still can't send an invoice",
+          "url": "https://paolino.me/founding-a-company-in-germany/",
+          "source": "Hacker News",
+          "line": "Trending in Business."
+        },
+        {
+          "key": "startups",
+          "category": "Startups",
+          "title": "Show HN: This up votes itself",
+          "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74",
+          "source": "Hacker News",
+          "line": "Trending in Startups."
+        },
+        {
+          "key": "industry",
+          "category": "Industry",
+          "title": "Age verification is just a precursor to automated attribution of speech",
+          "url": "https://nonogra.ph/age-verification-is-just-a-precursor-to-attribution-of-speech-06-29-2026",
+          "source": "Hacker News",
+          "line": "Trending in Industry."
+        },
+        {
+          "key": "humanity",
+          "category": "Humanity",
+          "title": "Professor denounces mass AI fraud on an exam at Brown",
+          "url": "https://english.elpais.com/education/2026-06-28/ai-fraud-at-brown-university-academic-integrity-is-at-risk.html",
+          "source": "Hacker News",
+          "line": "Trending in Humanity."
+        },
+        {
+          "key": "viral",
+          "category": "Viral",
+          "title": "Age verification is just a precursor to automated attribution of speech",
+          "url": "https://nonogra.ph/age-verification-is-just-a-precursor-to-attribution-of-speech-06-29-2026",
+          "source": "Hacker News",
+          "line": "Trending in Viral."
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "ts": "2026-06-28T14:50:37.409Z",
+      "intro": "Your daily signal across tech, science, AI, business, startups, and the wider world.",
+      "items": [
+        {
+          "key": "tech",
+          "category": "Tech",
+          "title": "Anonymous GitHub account mass-dropping undisclosed 0-days",
+          "url": "https://github.com/bikini/exploitarium",
+          "source": "Hacker News",
+          "line": "Trending in Tech."
+        },
+        {
+          "key": "science",
+          "category": "Science",
+          "title": "Why does kinetic energy increase quadratically, not linearly, with speed? (2011)",
+          "url": "https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed",
+          "source": "Hacker News",
+          "line": "Trending in Science."
+        },
+        {
+          "key": "ai",
+          "category": "AI",
+          "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+          "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+          "source": "Hacker News",
+          "line": "Trending in AI."
+        },
+        {
+          "key": "business",
+          "category": "Business",
+          "title": "Founding a company in Germany: €9600, 152 days and I still can't send an invoice",
+          "url": "https://paolino.me/founding-a-company-in-germany/",
+          "source": "Hacker News",
+          "line": "Trending in Business."
+        },
+        {
+          "key": "startups",
+          "category": "Startups",
+          "title": "Show HN: This up votes itself",
+          "url": "http://news.ycombinator.com/vote?for=3742902&dir=up&whence=%6e%65%77%65%73%74",
+          "source": "Hacker News",
+          "line": "Trending in Startups."
+        },
+        {
+          "key": "industry",
+          "category": "Industry",
+          "title": "Anonymous GitHub account mass-dropping undisclosed 0-days",
+          "url": "https://github.com/bikini/exploitarium",
+          "source": "Hacker News",
+          "line": "Trending in Industry."
+        },
+        {
+          "key": "humanity",
+          "category": "Humanity",
+          "title": "Ex-NOAA employees laid off by DOGE rebuilt climate website",
+          "url": "https://www.climate.us/",
+          "source": "Hacker News",
+          "line": "Trending in Humanity."
+        },
+        {
+          "key": "viral",
+          "category": "Viral",
+          "title": "Anonymous GitHub account mass-dropping undisclosed 0-days",
+          "url": "https://github.com/bikini/exploitarium",
+          "source": "Hacker News",
+          "line": "Trending in Viral."
+        }
+      ]
+    }
+  ],
+  "updated": "2026-07-01T15:46:24.917Z"
+}
