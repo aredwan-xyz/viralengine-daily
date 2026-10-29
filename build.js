@@ -17,8 +17,8 @@ const DATA = path.join(ROOT, 'data', 'posts.json');
 
 const SITE = {
   title: 'ViralEngine Daily',
-  tagline: 'High-signal, AI-written intelligence across tech, science & the world — refreshed every day.',
-  repo: 'https://github.com/aredwan-xyz/viralengine',
+  tagline: 'Daily source-linked stories across tech, science and the world. AI assistance is labeled when used.',
+  repo: 'https://github.com/aredwan-xyz/viralengine-daily',
 };
 
 const CATS = [
@@ -150,7 +150,7 @@ function renderIndex(data) {
     <div class="kicker">⚡ Daily signal engine</div>
     <h1>Today in <span class="grad">tech, science & the world</span>.</h1>
     <p class="sub">${esc(SITE.tagline)}</p>
-    <div class="hero-meta"><span>${posts.length} stories</span><span>·</span><span>8 topics</span><span>·</span><span>refreshed daily</span></div>
+    <div class="hero-meta"><span>${posts.length} stories</span><span>·</span><span>${esc(data.health?.mode || 'Generation mode not recorded')}</span><span>·</span><span>Last publication: ${esc(data.updated || 'unknown')}</span></div>
   </section>`;
 
   return layout(SITE.title, hero + briefHtml + featuredHtml + archiveHtml, { depth: 0 });
@@ -167,7 +167,7 @@ function renderPost(p) {
     <div class="post-cat"><span class="tag">${esc(c.label)}</span><span class="impact">${p.impact}</span></div>
     <h1>${esc(p.title)}</h1>
     <p class="post-dek">${esc(p.dek)}</p>
-    <div class="post-meta"><span>${fmtDate(p.date)}</span><span>·</span><a href="${escAttr(p.source.url)}" target="_blank" rel="noopener">Source: ${esc(p.source.name)} ↗</a></div>
+    <div class="post-meta"><span>${fmtDate(p.date)}</span><span>·</span><span>${p.ai ? 'AI-assisted analysis — verify claims with the source' : 'Source-only summary — no AI analysis'}</span><span>·</span><a href="${escAttr(p.source.url)}" target="_blank" rel="noopener">Source: ${esc(p.source.name)} ↗</a></div>
     ${takeaways}
     <div class="prose">${md(p.body)}</div>
     <div class="tags">${tags}</div>
@@ -201,4 +201,5 @@ function main() {
   console.log(`✓ built ${DIST}: index + ${(data.posts || []).length} post pages`);
 }
 
-main();
+module.exports = { renderIndex, renderPost };
+if (require.main === module) main();
