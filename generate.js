@@ -5,7 +5,7 @@
  * grounded posts (Gemini) → merge into the archive at site/data/posts.json.
  *
  * Works WITHOUT a key (fallback: grounded structured posts from source data),
- * so the build never fails. With GEMINI_API_KEY it produces rich analysis.
+ * with source-only mode explicitly marked. Empty source runs fail publication.
  *
  * Output: one "daily brief" (one headline per category) + 3-4 featured
  * deep-dive posts, appended to a capped rolling archive.
@@ -86,7 +86,7 @@ async function writePost(item, cat) {
       body:
         (item.summary ? item.summary + '\n\n' : '') +
         `This is a trending ${cat.label.toLowerCase()} item picked up from ${item.source}. ` +
-        `Follow the source link for the full story. *(Rich AI analysis appears here once a GEMINI_API_KEY is configured.)*`,
+        `Follow the source link for the full story. *(Source-only summary; AI analysis is unavailable for this item.)*`,
       takeaways: [`Trending now in ${cat.label}`, `Source: ${item.source}`, `${item.comments || 0} comments / ${item.score || 0} points`],
       tags: [cat.key, 'trending'],
       impact: Math.min(95, 55 + Math.round((item.score || 0) / 25)),
@@ -104,6 +104,7 @@ async function buildBrief(topByCat) {
   }).filter(Boolean);
 
   let intro = 'Your daily signal across tech, science, AI, business, startups, and the wider world.';
+  let ai = false;
   const lines = {};
 
   if (gemini.hasKey() && items.length) {
@@ -118,6 +119,7 @@ async function buildBrief(topByCat) {
       const j = await gemini.chatJSON(system, user, { maxTokens: 1024 });
       if (j.intro) intro = j.intro;
       for (const it of j.items || []) if (it && it.key) lines[it.key] = it.line;
+      ai = Boolean(j.intro && items.every((i) => typeof lines[i.key] === 'string' && lines[i.key].trim()));
     } catch (e) {
       console.error(`  ai brief failed: ${e.message}`);
     }
@@ -126,6 +128,7 @@ async function buildBrief(topByCat) {
   return {
     date: today(),
     ts: nowISO(),
+    ai,
     intro,
     items: items.map((i) => ({ ...i, line: lines[i.key] || `Trending in ${i.category}.` })),
   };
@@ -140,17 +143,18 @@ function loadArchive() {
   }
 }
 
-async function main() {
+async function main({ fetchItems = fetchCategory } = {}) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
   console.log(`\nViralEngine Daily — generating (${gemini.hasKey() ? 'AI: ' + gemini.MODEL : 'NO KEY → fallback mode'})\n`);
 
   const topByCat = {};
   for (const c of CATS) {
-    topByCat[c.key] = await fetchCategory(c.key);
+    topByCat[c.key] = await fetchItems(c.key);
     console.log(`  ${c.label.padEnd(9)} ${topByCat[c.key].length} item(s)`);
   }
 
   const brief = await buildBrief(topByCat);
+  if (!brief.items.length) throw new Error('No source items; preserving the last published archive');
 
   // Featured: one distinct top item per category (deduped by title across
   // categories so a shared front-page story can't repeat), then top N by score.
@@ -191,12 +195,23 @@ async function main() {
   archive.posts = result.slice(0, MAX_POSTS);
   archive.briefs = [brief, ...archive.briefs.filter((b) => b.date !== brief.date)].slice(0, MAX_BRIEFS);
   archive.updated = nowISO();
+  archive.health = {
+    date: today(),
+    mode: featured.every((post) => post.ai) && brief.ai ? 'ai-assisted' : 'source-only-or-partial',
+    aiPosts: featured.filter((post) => post.ai).length,
+    featuredPosts: featured.length,
+    categoriesAvailable: brief.items.length,
+    categoriesExpected: CATS.length,
+  };
 
   fs.writeFileSync(ARCHIVE, JSON.stringify(archive, null, 2));
   console.log(`\n✓ +${added} new · ${upgraded} upgraded · brief ${brief.date} · archive now ${archive.posts.length} posts\n`);
 }
 
-main().catch((e) => {
-  console.error('GENERATE FAILED:', e);
-  process.exit(1);
-});
+module.exports = { finalizePost, writePost, buildBrief, main };
+if (require.main === module) {
+  main().catch((e) => {
+    console.error('GENERATE FAILED:', e);
+    process.exitCode = 1;
+  });
+}

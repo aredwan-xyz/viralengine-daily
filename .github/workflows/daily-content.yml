@@ -30,16 +30,21 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+
+      - name: Test generation behavior
+        run: npm test
 
       - name: Restore archive from content branch
         run: |
           mkdir -p data
-          git fetch origin content 2>/dev/null || true
-          if git cat-file -e origin/content:posts.json 2>/dev/null; then
+          if git ls-remote --exit-code origin refs/heads/content; then
+            git fetch origin content
             git show origin/content:posts.json > data/posts.json
             echo "Restored archive ($(node -e 'console.log(JSON.parse(require("fs").readFileSync("data/posts.json")).posts.length)') posts)."
           else
+            status=$?
+            if [ "$status" -ne 2 ]; then exit "$status"; fi
             echo "No content branch yet — starting a fresh archive."
           fi
 
@@ -52,6 +57,19 @@ jobs:
       - name: Build static site
         run: node build.js
 
+      - name: Persist archive before publication
+        run: |
+          git config user.name "viralengine-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          blob=$(git hash-object -w data/posts.json)
+          tree=$(printf '100644 blob %s\tposts.json\n' "$blob" | git mktree)
+          if git rev-parse --verify origin/content >/dev/null 2>&1; then
+            commit=$(git commit-tree "$tree" -p origin/content -m "content: $(date -u +%F)")
+          else
+            commit=$(git commit-tree "$tree" -m "content: $(date -u +%F)")
+          fi
+          git push origin "$commit:refs/heads/content"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -60,20 +78,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
-
-      # Best-effort: persist the growing archive on a dedicated content branch.
-      # Runs after the deploy so the site always publishes even if this hiccups.
-      - name: Persist archive to content branch
-        continue-on-error: true
-        run: |
-          tmp="$(mktemp -d)"
-          cp data/posts.json "$tmp/posts.json"
-          cd "$tmp"
-          git init -q
-          git config user.name "viralengine-bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -q -b content
-          git add posts.json
-          git commit -qm "content: $(date -u +%F)"
-          git push -fq "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" content
-          echo "Archive saved to content branch."
